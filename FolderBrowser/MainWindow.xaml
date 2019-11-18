@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:FolderBrowser"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
+        <local:FolderUserControl x:Name="primero" Titulo="Directorio de trabajo"></local:FolderUserControl>
+        <local:FolderUserControl x:Name="segundo" Titulo="Directorio temporal"></local:FolderUserControl>
+        <local:FolderUserControl x:Name="tercero" Titulo="Directorio de log"></local:FolderUserControl>
+
         
-    </Grid>
+        <TextBlock>
+            <Run Text="Directorio de trabajo: "></Run>
+            <Run Text="{Binding ElementName=primero, Path=Texto}"></Run>
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Directorio temporal: "></Run>
+            <Run Text="{Binding ElementName=segundo, Path=Texto}"></Run>
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Directorio de log: "></Run>  
+            <Run Text="{Binding ElementName=tercero, Path=Texto}"></Run>
+        </TextBlock>
+    </StackPanel>
+    
 </Window>
